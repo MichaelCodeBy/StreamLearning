@@ -15,3 +15,7 @@ public class Stream {
         System.out.println(count);
     }
 }
+
+// interface BaseStream<T , S extends BaseStream<T , S>>
+// T- тип данных в потоке
+// S - тип потока который наследуется от интерфейса BaseStream
