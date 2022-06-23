@@ -1,4 +1,4 @@
-import java.util.Arrays;
+/* import java.util.Arrays;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -40,4 +40,4 @@ citiesStream.forEach(s->System.out.println(s)); // выводим все эле�
         doubleStream.forEach(d->System.out.println(d));
     }
 
-}
+}*/
