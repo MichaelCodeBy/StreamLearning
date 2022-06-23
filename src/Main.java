@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         List<Animal> animals=getAnimals();
         //старый подход циклом FOR (Императивный)
-        // новый подход после жава 8 (деклоративный)
+        // новый подход после жава 8 (декларативный)
 
         //Filter
         animals.stream();
