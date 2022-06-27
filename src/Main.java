@@ -1,17 +1,77 @@
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        List<Animal> animals=getAnimals();
+        List<Animal> animals = getAnimals();
         //старый подход циклом FOR (Императивный)
+       /* List<Animal> predators = new ArrayList<>();
+        for (Animal animal : animals) {
+            if (animal.getClassification().equals(Classification.PREDATOR)) {
+                predators.add(animal);
+            }
+        }
+        predators.forEach(System.out::println);
+
+*/
         // новый подход после жава 8 (декларативный)
 
         //Filter
-        animals.stream();
+        List<Animal> predators = animals.stream()
+                .filter(animal -> animal.getClassification().equals(Classification.PREDATOR))
+                .collect(Collectors.toList());
+        //predators.forEach(System.out::println);
 
+        //Sort
+        List<Animal> sorted = animals.stream()
+                .sorted(Comparator.comparing(Animal::getAge).reversed())
+                .collect(Collectors.toList());
+        //sorted.forEach(System.out::println);
+
+        //All match
+        boolean allMatch = animals.stream()
+                .allMatch(animal -> animal.getAge()>10);
+        System.out.println(allMatch );
+
+        //Any match
+        boolean anyMatch = animals.stream()
+                .anyMatch(animal -> animal.getAge()>10);
+        System.out.println(anyMatch );
+
+        //None match
+        boolean noneMatch = animals.stream()
+                .noneMatch(animal -> animal.getName().equals("Lipton)"));
+        System.out.println(noneMatch );
+
+        // Max
+        animals.stream()
+                .max(Comparator.comparing(Animal::getAge))
+                .ifPresent(System.out::println);
+
+        //Min
+        animals.stream()
+                .min(Comparator.comparing(Animal::getAge))
+                .ifPresent(System.out::println);
+
+        //Group
+        Map<Classification, List<Animal>> classificationListMap = animals.stream()
+                .collect(Collectors.groupingBy(Animal::getClassification));
+        classificationListMap.forEach(((classification, animals1) -> {
+            System.out.println(classification);
+            animals1.forEach(System.out::println);
+            System.out.println();
+        }));
+
+//Chening
+        Optional<String> olderHerbAnimal=animals.stream()
+                .filter(animal -> animal.getClassification().equals(Classification.HERBIVORE))
+                .max(Comparator.comparing(Animal::getAge))
+                .map(Animal::getName);
+        olderHerbAnimal.ifPresent(System.out::println);
     }
+
 
     private static List<Animal> getAnimals() {
         return List.of(
@@ -26,8 +86,6 @@ public class Main {
                 new Animal("Dog", 20, Classification.PREDATOR),
                 new Animal("Australopitec", 19, Classification.OMNIVOROUS),
                 new Animal("Crocodile", 26, Classification.PREDATOR)
-                );
+        );
     }
 }
-
-

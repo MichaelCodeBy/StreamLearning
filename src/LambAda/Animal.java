@@ -1,5 +1,11 @@
 package LambAda;
 
+import org.w3c.dom.ls.LSOutput;
+
+import javax.crypto.spec.PSource;
+import java.net.SocketOption;
+import java.sql.SQLOutput;
+
 public class Animal {
     private String species;
     private boolean canHope;
