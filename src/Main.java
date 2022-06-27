@@ -32,18 +32,18 @@ public class Main {
 
         //All match
         boolean allMatch = animals.stream()
-                .allMatch(animal -> animal.getAge()>10);
-        System.out.println(allMatch );
+                .allMatch(animal -> animal.getAge() > 10);
+        System.out.println(allMatch);
 
         //Any match
         boolean anyMatch = animals.stream()
-                .anyMatch(animal -> animal.getAge()>10);
-        System.out.println(anyMatch );
+                .anyMatch(animal -> animal.getAge() > 10);
+        System.out.println(anyMatch);
 
         //None match
         boolean noneMatch = animals.stream()
                 .noneMatch(animal -> animal.getName().equals("Lipton)"));
-        System.out.println(noneMatch );
+        System.out.println(noneMatch);
 
         // Max
         animals.stream()
@@ -65,7 +65,7 @@ public class Main {
         }));
 
 //Chening
-        Optional<String> olderHerbAnimal=animals.stream()
+        Optional<String> olderHerbAnimal = animals.stream()
                 .filter(animal -> animal.getClassification().equals(Classification.HERBIVORE))
                 .max(Comparator.comparing(Animal::getAge))
                 .map(Animal::getName);
