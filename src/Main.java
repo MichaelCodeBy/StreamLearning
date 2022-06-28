@@ -1,3 +1,4 @@
+
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,7 +9,16 @@ public class Main {
     public static void main(String[] args) {
         List<Animal> animals = getAnimals();
         //старый подход циклом FOR (Императивный)
-        // новый подход после жава 8 (деклоративный)
+       /* List<Animal> predators = new ArrayList<>();
+        for (Animal animal : animals) {
+            if (animal.getClassification().equals(Classification.PREDATOR)) {
+                predators.add(animal);
+            }
+        }
+        predators.forEach(System.out::println);
+
+*/
+        // новый подход после жава 8 (декларативный)
 
         //Filter
         List<Animal> predators = animals.stream()
@@ -27,15 +37,17 @@ public class Main {
                 .allMatch(animal -> animal.getAge()>10);
         System.out.println(allMatch );
 
+
         //Any match
         boolean anyMatch = animals.stream()
-                .anyMatch(animal -> animal.getAge()>10);
-        System.out.println(anyMatch );
+                .anyMatch(animal -> animal.getAge() > 10);
+        System.out.println(anyMatch);
 
         //None match
         boolean noneMatch = animals.stream()
                 .noneMatch(animal -> animal.getName().equals("Lipton)"));
         System.out.println(noneMatch );
+        System.out.println(noneMatch);
 
         // Max
         animals.stream()
@@ -56,8 +68,10 @@ classificationListMap.forEach(((classification, animals1) -> {
     System.out.println();
 }));
 
+
+
 //Chening
-        Optional<String> olderHerbAnimal=animals.stream()
+        Optional<String> olderHerbAnimal = animals.stream()
                 .filter(animal -> animal.getClassification().equals(Classification.HERBIVORE))
                 .max(Comparator.comparing(Animal::getAge))
                 .map(Animal::getName);
@@ -81,5 +95,3 @@ classificationListMap.forEach(((classification, animals1) -> {
         );
     }
 }
-
-
