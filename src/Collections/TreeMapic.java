@@ -93,6 +93,7 @@ package Collections;
         будут отсортированы компаратором.*/
 
 import java.util.*;
+import java.util.Set;
 
 public class TreeMapic {
 
@@ -127,21 +128,21 @@ public class TreeMapic {
 
       System.out.printf("Last item has key %d value %s \n",lastItem.getKey(), lastItem.getValue());
 
-      Map<String, Person2> people = new TreeMap<String, Person2>();
-      people.put("1240i54", new Person2("Tom"));
-      people.put("1564i55", new Person2("Bill"));
-      people.put("4540i56", new Person2("Nick"));
+      Map<String, Person4> people = new TreeMap<>();
+      people.put("1240i54", new Person4("Tom"));
+      people.put("1564i55", new Person4("Bill"));
+      people.put("4540i56", new Person4("Nick"));
 
-      for(Map.Entry<String, Person2> item : people.entrySet()){
+      for(Map.Entry<String, Person4> item : people.entrySet()){
 
         System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue().getName());
       }
     }
   }
-  class Person2{
+  class Person4{
 
     private String name;
-    public Person2(String name){
+    public Person4(String name){
 
       this.name = name;
     }
