@@ -1,6 +1,7 @@
 package Collections;
 
 
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class NavigableSetic {
@@ -21,7 +22,7 @@ public class NavigableSetic {
         System.out.println(states.first()); // получим первый - самый меньший элемент
         System.out.println(states.last()); // получим последний - самый больший элемент
         // получим поднабор от одного элемента до другого
-        SortedSet<String> set = states.subSet("Germany", "Italy");
+        java.util.SortedSet<String> set = states.subSet("Germany", "Italy");
         System.out.println(set);
         // элемент из набора, который больше текущего
         String greater = states.higher("Germany");
@@ -30,7 +31,7 @@ public class NavigableSetic {
         // возвращаем набор в обратном порядке
         java.util.NavigableSet<String> navSet = states.descendingSet();
         // возвращаем набор в котором все элементы меньше текущего
-        SortedSet<String> setLower = states.headSet("Germany");
+        java.util.SortedSet<String> setLower = states.headSet("Germany");
         // возвращаем набор в котором все элементы больше текущего
         SortedSet<String> setGreater = states.tailSet("Germany");
         System.out.println(navSet);
