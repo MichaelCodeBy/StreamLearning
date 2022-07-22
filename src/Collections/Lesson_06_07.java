@@ -21,10 +21,10 @@ public class Lesson_06_07 {
 
 
 
-        for(Map.Entry<Integer,String>entry: map.entrySet())
-            System.out.println(entry.getKey()+":"+ entry.getValue());
+       // for(Map.Entry<Integer,String>entry: map.entrySet())
+         //   System.out.println(entry.getKey()+":"+ entry.getValue());
 
-        Set<Integer>set_1 = new HashSet<>();
+       /* Set<Integer>set_1 = new HashSet<>();
         set_1.add(3);
         set_1.add(5);
         set_1.add(1);
@@ -48,10 +48,10 @@ public class Lesson_06_07 {
         set_3.add(6);
         set_3.add(6);
 
-       /* System.out.println(set_2);
+        System.out.println(set_2);
         System.out.println(set_3);
         System.out.println(list);
-        System.out.println(map);*/
+        System.out.println(map);
         Map(1,"one") -> 1 -> 5656 -> 3
         Map(2,"two") -> 2 -> 5656 -> 3
 
@@ -61,7 +61,7 @@ public class Lesson_06_07 {
                 []
         []
 
-
+*/
 
     }
 }
