@@ -14,6 +14,9 @@ public class ArrayListic{
             people.add("Kate");
             people.add("Sam");
             people.add(1, "Bob"); // добавляем элемент по индексу 1
+            people.add("Sonya");
+            people.add("Lena");
+            
 
             System.out.println(people.get(1));// получаем 2-й объект
             people.set(1, "Robert"); // установка нового значения для 2-го объекта
