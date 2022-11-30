@@ -3,7 +3,7 @@ public class Program {
 
     public static void main(String[] args) {
 
-        ArrayList<String> cities = new ArrayList<String>();
+        List<String> cities = new ArrayList<>();
         Collections.addAll(cities, "Париж", "Лондон", "Мадрид");
         cities.stream() // получаем поток
                 .filter(s->s.length()==6) // применяем фильтрацию по длине строки

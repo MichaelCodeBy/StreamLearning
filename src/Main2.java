@@ -9,9 +9,9 @@ public class Main2 {
         list.add(6);
         list.add(6);
         list.add(6);
-        // System.out.println("после добавлени "+list.size());
+        System.out.println("после добавлени "+list.size());
         list.remove(0);
-        // System.out.println("после удаления "+list.size());
+        System.out.println("после удаления "+list.size());
 
         List<Integer>list2 = new LinkedList<>();
 
