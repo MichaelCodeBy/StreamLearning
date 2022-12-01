@@ -24,6 +24,7 @@ public class ProgramInterface{
             return new Journal(name);
     }
 }
+@FunctionalInterface
 interface Printable{
 
     void print();
@@ -44,18 +45,9 @@ class Book implements Printable{
         System.out.printf("%s (%s) \n", name, author);
     }
 }
-class Journal implements Printable {
 
-    private String name;
+record Journal(String name) implements Printable {
 
-    String getName(){
-        return name;
-    }
-
-    Journal(String name){
-
-        this.name = name;
-    }
     public void print() {
         System.out.println(name);
     }
